@@ -17,6 +17,7 @@
 *.iml
 *.ipr
 /out/
+/cache/
 
 ### NetBeans ###
 /nbproject/private/
@@ -25,4 +26,3 @@
 /dist/
 /nbdist/
 /.nb-gradle/
-/cache
