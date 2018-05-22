@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   private userName;
   private firstName;
   private lastName;
-  editUserFlag: boolean;  
+  editUserFlag: boolean;
 
   constructor(private userService:UsersService) { 
     this.editUserFlag=false;
@@ -27,11 +27,12 @@ export class UserComponent implements OnInit {
     .subscribe(res=>this.user=null);
   };
 
-  UpdateUser(){
-    this.userService.updateUser(this.user.id, this.userName, this.firstName,this.lastName).subscribe(res=>{
-      this.user.userName=this.userName;
-      this.user.firstName=this.firstName;
-      this.user.lastName=this.lastName;
+  UpdateUser(){    
+    console.log(this.user.id, this.user.userName, this.user.firstName,this.user.lastName);
+    this.userService.updateUser(this.user.id, this.user.userName, this.user.firstName,this.user.lastName).subscribe(res=>{      
+      this.user.userName=res.json().userName;
+      this.user.firstName=res.json().firstName;
+      this.user.lastName=res.json().lastName;
       this.editUserFlag=false;
     })   
   }
