@@ -19,7 +19,7 @@ export class AddUserComponent implements OnInit {
   addNewUser(){
     console.log("Adding : "+this.userName+this.firstName+this.lastName);    
     this.userService.addUser(this.userName, this.firstName,this.lastName).subscribe(res=>{
-      this.users.push(res.json());
+     // this.users.push(res.json());
       this.userName="";
       this.firstName="";
       this.lastName="";
