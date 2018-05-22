@@ -1,7 +1,41 @@
 
 <section>
   <h2> Add New user</h2>
-  <app-add-user></app-add-user>
+
+ <!-- <app-add-user></app-add-user> -->
+ <table>
+  <tr>
+    <td>
+      USER NAME :
+    </td>
+    <td>
+      <input type="text" name="userName" [(ngModel)]="userName" placeholder="userName" required>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      FIRST NAME :
+    </td>
+    <td>
+      <input type="text" name="firstName" [(ngModel)]="firstName" placeholder="firstName" required>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      LAST NAME :
+    </td>
+    <td>
+      <input type="text" name="lastName" [(ngModel)]="lastName" placeholder="lastName" required>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <input type="button" value="Submit" (click)="addNewUser()">  
+    </td>
+  </tr>
+</table>
+
   <h2>List of USERS</h2><br/>
 </section>
 <app-user *ngFor="let user of users" [user]='user'></app-user>
