@@ -1,3 +1,32 @@
-<p>
-  add-user works!
-</p>
+<table>
+  <tr>
+    <td>
+      USER NAME :
+    </td>
+    <td>
+      <input type="text" name="userName" [(ngModel)]="userName" placeholder="userName" required>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      FIRST NAME :
+    </td>
+    <td>
+      <input type="text" name="firstName" [(ngModel)]="firstName" placeholder="firstName" required>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      LAST NAME :
+    </td>
+    <td>
+      <input type="text" name="lastName" [(ngModel)]="lastName" placeholder="lastName" required>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <input type="button" value="Submit" ng-click="addUser()">  
+    </td>
+  </tr>
+</table>

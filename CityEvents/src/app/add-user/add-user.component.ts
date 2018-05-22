@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//import {UserServiceApi} from '../UserServiceApi';
+
 
 @Component({
   selector: 'app-add-user',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
+  private userName;
+  private firstName;
+  private lastName;
+  private users;
 
-  constructor() { }
+  constructor()  {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  addUser(){
+  //  UsersServiceApi.addUser(this.userName, this.firstName, this.lastName).subscribe(res=>{
+    //  this.users.push(res.json());
+      this.userName="";
+      this.firstName="";
+      this.lastName="";
+   // })
   }
-
 }
