@@ -1,3 +1,4 @@
+import { UserComponent } from './../user/user.component';
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 
@@ -8,13 +9,13 @@ import { Http } from '@angular/http';
 })
 export class GetUsersComponent implements OnInit {
   nameDemo = "Mohit";
-
+  users:any;
   constructor(private http: Http) { }
 
   ngOnInit() {
     this.http.get('/users/users')
-    .toPromise()
-    .then(response => console.log(response.json()));
+    .subscribe(res => this.users=res.json());
+    //console.log(this.users);
   }
 
 }
