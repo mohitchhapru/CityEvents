@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import {UserServiceApi} from '../UserServiceApi';
+import {UsersService} from '../users.service';
 
 
 @Component({
@@ -11,18 +11,28 @@ export class AddUserComponent implements OnInit {
   private userName;
   private firstName;
   private lastName;
-  private users;
+  users:any;
 
-  constructor()  {}
+  constructor(private userService:UsersService) { }
+  
 
   ngOnInit() {}
 
-  addUser(){
+  addNewUser(){
+    console.log("Adding : "+this.userName+this.firstName+this.lastName);    
+    this.userService.addUser(this.userName, this.firstName,this.lastName).subscribe(res=>{
+      this.users.push(res.json());
+      this.userName="";
+      this.firstName="";
+      this.lastName="";
+    })
+  }  
+  /*addUser(){
   //  UsersServiceApi.addUser(this.userName, this.firstName, this.lastName).subscribe(res=>{
     //  this.users.push(res.json());
       this.userName="";
       this.firstName="";
       this.lastName="";
    // })
-  }
+  }*/
 }

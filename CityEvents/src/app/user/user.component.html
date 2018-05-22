@@ -1,3 +1,6 @@
-<p>
-  user works!
-</p>
+<div *ngIf="user">
+  <div>
+    <a href="http:localhost:8080/users/{{user.id}}"> {{user.userName}} </a>
+    <button (click)="deleteUser()">Delete</button>
+  </div>
+</div>
