@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UsersService} from '../users.service';
 
-
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -14,7 +13,6 @@ export class AddUserComponent implements OnInit {
   users:any;
 
   constructor(private userService:UsersService) { }
-  
 
   ngOnInit() {}
 
@@ -26,13 +24,5 @@ export class AddUserComponent implements OnInit {
       this.firstName="";
       this.lastName="";
     })
-  }  
-  /*addUser(){
-  //  UsersServiceApi.addUser(this.userName, this.firstName, this.lastName).subscribe(res=>{
-    //  this.users.push(res.json());
-      this.userName="";
-      this.firstName="";
-      this.lastName="";
-   // })
-  }*/
+  }    
 }

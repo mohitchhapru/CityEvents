@@ -13,8 +13,11 @@ export class UserComponent implements OnInit {
   private userName;
   private firstName;
   private lastName;
+  editUserFlag: boolean;  
 
-  constructor(private userService:UsersService) { }
+  constructor(private userService:UsersService) { 
+    this.editUserFlag=false;
+  }
 
   ngOnInit() {
   }
@@ -23,4 +26,17 @@ export class UserComponent implements OnInit {
     this.userService.deleteUser(this.user.id)
     .subscribe(res=>this.user=null);
   };
+
+  UpdateUser(){
+    this.userService.updateUser(this.user.id, this.userName, this.firstName,this.lastName).subscribe(res=>{
+      this.user.userName=this.userName;
+      this.user.firstName=this.firstName;
+      this.user.lastName=this.lastName;
+      this.editUserFlag=false;
+    })   
+  }
+
+  editUser(){
+    this.editUserFlag=true;
+  }
 }

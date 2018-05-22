@@ -1,6 +1,41 @@
 <div *ngIf="user">
   <div>
     <a href="http:localhost:8080/users/{{user.id}}"> {{user.userName}} </a>
+    <button (click)="editUser()">Edit</button>
     <button (click)="deleteUser()">Delete</button>
-  </div>
+  </div>  
+</div>
+<div *ngIf="editUserFlag">
+    <table>
+        <tr>
+          <td>
+            USER NAME :
+          </td>
+          <td>
+            <input type="text" name="userName" [(ngModel)]="user.userName" placeholder="userName" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            FIRST NAME :
+          </td>
+          <td>
+            <input type="text" name="firstName" [(ngModel)]="user.firstName" placeholder="firstName" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            LAST NAME :
+          </td>
+          <td>
+            <input type="text" name="lastName" [(ngModel)]="user.lastName" placeholder="lastName" required>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="button" value="Update" (click)="UpdateUser()">  
+          </td>
+        </tr>
+      </table>
 </div>
